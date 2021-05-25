@@ -1,0 +1,31 @@
+{
+  "name": "treejson",
+  "version": "0.1.0",
+  "description": "Serialize/deserialize json with support for Map and Set",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build",
+    "test": "npx jest",
+    "tidy": "npx prettier --tab-width 4 --single-quote true --write src"
+  },
+  "author": "FTWinston",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FTWinston/treejson.git"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.10.2",
+    "@types/jest": "^25.2.3",
+    "babel-jest": "^26.0.1",
+    "jest": "^26.0.1",
+    "prettier": "^2.0.5",
+    "ts-jest": "^26.1.0",
+    "typescript": "^4.2.4"
+  },
+  "files": [
+    "lib/**/*"
+  ]
+}
