@@ -1,5 +1,7 @@
-import { reviver } from './reviver';
+import { enhancedReviver, enhanceReviver, reviver } from './reviver';
 
-export function parse(text: string) {
-    return JSON.parse(text, reviver);
+export function parse(text: string, reviver?: reviver) {
+    const useReviver = reviver ? enhanceReviver(reviver) : enhancedReviver;
+
+    return JSON.parse(text, useReviver);
 }

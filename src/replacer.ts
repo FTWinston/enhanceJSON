@@ -2,7 +2,13 @@ import { valueKey, typeKey } from './constants';
 import { DataType } from './DataType';
 import { isDate, isMap, isSet } from './typeChecks';
 
-export function replacer(key: string, value: any) {
+export type replacer = (this: any, key: string, value: any) => any;
+
+export function enhancedReplacer(
+    key: string,
+    value: any,
+    otherReplacer?: replacer
+) {
     if (isMap(value)) {
         return {
             [typeKey]: DataType.Map,
@@ -25,5 +31,9 @@ export function replacer(key: string, value: any) {
         }
     }
 
-    return value;
+    return otherReplacer?.(key, value) ?? value;
+}
+
+export function enhanceReplacer(replacer: replacer): replacer {
+    return (key: string, value: any) => enhancedReplacer(key, value, replacer);
 }
