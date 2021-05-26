@@ -1,11 +1,11 @@
-# treeJSON
+# enhanceJSON
 Parse/stringify object trees to JSON, with support for Map, Set and Date.
 
 ## Usage
-treeJSON is used in the same way as you'd call JSON.parse / JSON.stringify. (It actually calls those behind the scenes, with a custom reviver / replacer.)
+enhanceJSON is used in the same way as you'd call JSON.parse / JSON.stringify. (It actually calls those behind the scenes, with a custom reviver / replacer.)
 
 ```javascript
-import * as treeJSON from 'treejson';
+import * as enhanceJSON from 'enhancejson';
 
 const data = {
   val1: 'test',
@@ -19,8 +19,8 @@ const data = {
   }
 }
 
-const strData = treeJSON.stringify(data);
-const newData = treeJSON.parse(strData);
+const strData = enhanceJSON.stringify(data);
+const newData = enhanceJSON.parse(strData);
 
 expect(newData).toEqual(data);
 ```
