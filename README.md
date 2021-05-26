@@ -9,7 +9,7 @@ import * as treeJSON from 'treejson';
 
 const data = {
   val1: 'test',
-  map: new Map([[ 1, 'one' ],[ 2, 'two' ]]);
+  map: new Map([[1, 'one'],[2, 'two']]);
   child: {
     sets: [
       new Set([1, 2, 3]),
