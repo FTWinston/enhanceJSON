@@ -1,5 +1,5 @@
 {
-  "name": "treejson",
+  "name": "enhancejson",
   "version": "0.1.0",
   "description": "Serialize/deserialize json with support for Map and Set",
   "main": "lib/index.js",
@@ -14,7 +14,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FTWinston/treejson.git"
+    "url": "git+https://github.com/FTWinston/enhanceJSON.git"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.10.2",
