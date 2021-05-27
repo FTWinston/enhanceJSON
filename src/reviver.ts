@@ -2,7 +2,7 @@ import { valueKey, typeKey } from './constants';
 import { DataType } from './DataType';
 import { isArray, isObject } from './typeChecks';
 
-export type reviver = (this: any, key: string, value: any) => any;
+export type reviverFunc = (this: any, key: string, value: any) => any;
 
 function reviveMap(value: Record<any, any>) {
     const entries = value[valueKey];
@@ -29,19 +29,15 @@ function reviveDate(value: Record<any, any>) {
     return new Date(Date.UTC(b[0], --b[1], b[2], b[3], b[4], b[5], b[6]));
 }
 
-export function enhancedReviver(
-    key: string,
-    value: any,
-    otherReviver?: reviver
-): any {
+export function reviver(key: string, value: any): any {
     if (!isObject(value)) {
-        return otherReviver?.(key, value) ?? value;
+        return value;
     }
 
     const specifiedType = value[typeKey];
 
     if (!specifiedType) {
-        return otherReviver?.(key, value) ?? value;
+        return value;
     }
 
     switch (specifiedType) {
@@ -56,10 +52,13 @@ export function enhancedReviver(
 
         default:
             delete value[typeKey];
-            return otherReviver?.(key, value) ?? value;
+            return value;
     }
 }
 
-export function enhanceReviver(reviver: reviver): reviver {
-    return (key: string, value: any) => enhancedReviver(key, value, reviver);
+export function enhanceReviver(customReviver: reviverFunc): reviverFunc {
+    return (key: string, value: any) => {
+        value = reviver(key, value);
+        return customReviver(key, value);
+    };
 }

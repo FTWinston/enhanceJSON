@@ -1,5 +1,5 @@
 # enhanceJSON
-Parse/stringify object trees to JSON, with support for Map, Set and Date.
+Stringify/parse object trees to/from JSON, with support for Map, Set and Date.
 
 enhanceJSON is a drop-in replacement for JSON.parse and JSON.stringify, with identical signatures to those methods.
 
@@ -7,7 +7,7 @@ enhanceJSON is a drop-in replacement for JSON.parse and JSON.stringify, with ide
 Run `npm install --save enhancejson`
 
 ## Usage
-enhanceJSON is used in the same way as you'd call JSON.parse / JSON.stringify. It uses a custom reviver and replacer to handle Maps, Sets and Dates. You can specify your own reviver and/or replacer, which will be used when the value being (de)serialised isn't a Map, Set or Date.
+enhanceJSON is used in the same way as you'd call JSON.stringify / JSON.parse. Internally, it uses a custom replacer and reviver to handle Maps, Sets and Dates. You can specify your own replacer and/or reviver, which will be used before (for replacers) or after (for revivers) the internal ones, when calling stringify or parse.
 
 ```javascript
 import * as enhanceJSON from 'enhancejson';
