@@ -11,8 +11,10 @@ test('primitives', () => {
         },
     };
 
-    const newTree = parse(stringify(tree));
+    const strTree = stringify(tree);
+    expect(typeof strTree).toEqual('string');
 
+    const newTree = parse(strTree);
     expect(newTree).toEqual(tree);
 });
 
@@ -44,8 +46,10 @@ test('maps', () => {
         },
     };
 
-    const newTree = parse(stringify(tree));
+    const strTree = stringify(tree);
+    expect(typeof strTree).toEqual('string');
 
+    const newTree = parse(strTree);
     expect(newTree).toEqual(tree);
 });
 
@@ -61,8 +65,10 @@ test('sets', () => {
         },
     };
 
-    const newTree = parse(stringify(tree));
+    const strTree = stringify(tree);
+    expect(typeof strTree).toEqual('string');
 
+    const newTree = parse(strTree);
     expect(newTree).toEqual(tree);
 });
 
@@ -75,7 +81,9 @@ test('dates', () => {
         },
     };
 
-    const newTree = parse(stringify(tree));
+    const strTree = stringify(tree);
+    expect(typeof strTree).toEqual('string');
 
+    const newTree = parse(strTree);
     expect(newTree).toEqual(tree);
 });

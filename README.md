@@ -27,5 +27,9 @@ const data = {
 const strData = enhanceJSON.stringify(data);
 const newData = enhanceJSON.parse(strData);
 
+expect(typeof strData).toEqual('string');
 expect(newData).toEqual(data);
 ```
+
+## How does it work?
+Fairly unexcitingly. Maps, Sets and Dates are represented in JSON as objects with a `__type` key that specifies their type. Avoid using this key name in your data when using enhanceJSON.
