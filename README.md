@@ -3,6 +3,8 @@ Stringify/parse object trees to/from JSON, with support for Map, Set and Date.
 
 enhanceJSON is a drop-in replacement for JSON.parse and JSON.stringify, with identical signatures to those methods.
 
+![Version badge](https://badgen.net/npm/v/enhancejson) ![Minified badge](https://badgen.net/bundlephobia/min/enhancejson) ![Minzipped badge](https://badgen.net/bundlephobia/minzip/enhancejson) ![Dependencies badge](https://badgen.net/bundlephobia/dependency-count/enhancejson) ![Types badge](https://badgen.net/npm/types/enhancejson)
+
 ## Installation
 Run `npm install --save enhancejson`
 
