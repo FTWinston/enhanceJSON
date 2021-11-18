@@ -1,7 +1,8 @@
 {
   "name": "enhancejson",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Serialize/deserialize json with support for Map and Set",
+  "sideEffects": false,
   "main": "lib/cjs/index.js",
   "module": "lib/es/index.js",
   "types": "lib/cjs/index.d.ts",
