@@ -1,15 +1,8 @@
 {
+  "extends": "./tsconfig-base.json",
   "compilerOptions": {
-    "outDir": "./lib",
-    "noImplicitAny": true,
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "target": "es6",
-    "allowJs": true,
-    "declaration": true,
-    "esModuleInterop": true,
-    "strictNullChecks": true
-  },
-  "include": ["src"],
-  "exclude": ["src/**/*.test.ts"]
+    "module": "esnext",
+    "target": "esnext",
+    "outDir": "lib/mjs"
+  }
 }

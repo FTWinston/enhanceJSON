@@ -1,11 +1,12 @@
 {
   "name": "enhancejson",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Serialize/deserialize json with support for Map and Set",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "main": "lib/cjs/index.js",
+  "module": "lib/es/index.js",
+  "types": "lib/cjs/index.d.ts",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc -p tsconfig.json && tsc -p tsconfig-cjs.json",
     "prepare": "npm run build",
     "test": "npx jest",
     "tidy": "npx prettier --tab-width 4 --single-quote true --write src"
